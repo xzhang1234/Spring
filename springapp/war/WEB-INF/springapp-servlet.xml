@@ -45,5 +45,17 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    <bean name="/priceincrease.htm" class="springapp.web.PriceIncreaseFormController">
+        <property name="sessionForm" value="true"/>
+        <property name="commandName" value="priceIncrease"/>
+        <property name="commandClass" value="springapp.service.PriceIncrease"/>
+        <property name="validator">
+            <bean class="springapp.service.PriceIncreaseValidator"/>
+        </property>
+        <property name="formView" value="priceincrease"/>
+        <property name="successView" value="hello.htm"/>
+        <property name="productManager" ref="productManager"/>
+    </bean>
 
 </beans>
